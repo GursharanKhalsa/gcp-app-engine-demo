@@ -17,14 +17,3 @@ steps:
 
 options:
   logging: CLOUD_LOGGING_ONLY
-
-# Deploy to App Engine Standard Environment
-#             - name: 'gcr.io/google.com/cloudsdktool/cloud-sdk'
-#             entrypoint: gcloud
-#             args:
-#               - 'app'
-#               - 'deploy'
-#               - '--image'
-#               - 'gcr.io/$PROJECT_ID/gcp-app-engine-demo'
-#               - '--promote'
-#               - '--quiet'
