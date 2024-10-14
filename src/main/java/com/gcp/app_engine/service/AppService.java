@@ -16,6 +16,7 @@ public class AppService {
         students.add(Student.builder().id(3).firstName("Ram").lastName("Kumar").country("USA").build());
         students.add(Student.builder().id(4).firstName("Tom").lastName("Brown").country("CANADA").build());
         students.add(Student.builder().id(5).firstName("Peter").lastName("White").country("Australia").build());
+        students.add(Student.builder().id(5).firstName("Barry").lastName("Alien").country("Spain").build());
     }
 
     public List<Student> getStudents() {
