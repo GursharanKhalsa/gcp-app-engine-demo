@@ -8,11 +8,11 @@ steps:
   - name: 'gcr.io/google.com/cloudsdktool/cloud-sdk'
     entrypoint: gcloud
     args:
-      - 'app',
-      - 'deploy',
-      - '--image',
-      - 'gcr.io/$PROJECT_ID/gcp-app-engine-demo',
-      - '--promote',
+      - 'app'
+      - 'deploy'
+      - '--image'
+      - 'gcr.io/$PROJECT_ID/gcp-app-engine-demo'
+      - '--promote'
       - '--quiet'
 
 options:
