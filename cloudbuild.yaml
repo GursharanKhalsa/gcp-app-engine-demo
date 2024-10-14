@@ -10,11 +10,10 @@ steps:
     args:
       - 'app'
       - 'deploy'
-      - '$_SERVICE_NAME'
-      - '--image'
-      - 'gcr.io/$PROJECT_ID/$_SERVICE_NAME:gcp-app-engine-demo'
-      - '--region'
-      - '$_DEPLOY_REGION'
+      - '--image-url'
+      - 'gcr.io/$PROJECT_ID/gcp-app-engine-demo'
+      - '--promote'
+      - '--quiet'
 
 options:
   logging: CLOUD_LOGGING_ONLY
