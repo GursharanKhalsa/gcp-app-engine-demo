@@ -1,11 +1,18 @@
 steps:
-  # Step 1: Build the Spring Boot application using Maven
+  # Build the Spring Boot application using Maven
   - name: 'maven'
     entrypoint: 'mvn'
     args: ['clean', 'package']
 
+  # Deploy to App Engine Standard Environment
   - name: 'gcr.io/cloud-builders/gcloud'
-    args: ['app', 'deploy', '--image-url=gcr.io/$PROJECT_ID/gcp-app-engine-demo', '--quiet']
+    args:
+      - 'app',
+      - 'deploy',
+      - '--image',
+      - 'gcr.io/$PROJECT_ID/gcp-app-engine-demo',
+      - '--promote',
+      - '--quiet'
 
 options:
   logging: CLOUD_LOGGING_ONLY
