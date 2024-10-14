@@ -5,15 +5,16 @@ steps:
     args: ['clean', 'package']
 
   # Deploy to App Engine Standard Environment
-  - name: 'gcr.io/cloud-builders/gcloud'
-    args: [
-      'app',
-      'deploy',
-      '--project',
-      '$PROJECT_ID',
-      '--promote',
-      '--quiet'
-    ]
+  - name: 'gcr.io/google.com/cloudsdktool/cloud-sdk'
+    entrypoint: gcloud
+    args:
+      - 'app'
+      - 'deploy'
+      - '$_SERVICE_NAME'
+      - '--image'
+      - 'gcr.io/$PROJECT_ID/$_SERVICE_NAME:gcp-app-engine-demo'
+      - '--region'
+      - '$_DEPLOY_REGION'
 
 options:
   logging: CLOUD_LOGGING_ONLY
